@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Differential Growth</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+
+  <div id="controls">
+    <h2>Differential Growth</h2>
+
+    <div class="control-group">
+      <label>Preset</label>
+      <select id="preset">
+        <option value="coral">Coral</option>
+        <option value="brain">Brain Folds</option>
+        <option value="lichen">Lichen</option>
+        <option value="circle">Circle Seed</option>
+        <option value="line">Line Seed</option>
+        <option value="rectangle">Rectangle Seed</option>
+      </select>
+    </div>
+
+    <div class="control-group">
+      <label>Repulsion Radius <span id="repulsionRadiusVal">15</span></label>
+      <input type="range" id="repulsionRadius" min="5" max="50" value="15" step="1">
+    </div>
+
+    <div class="control-group">
+      <label>Repulsion Strength <span id="repulsionStrengthVal">0.8</span></label>
+      <input type="range" id="repulsionStrength" min="0.1" max="3" value="0.8" step="0.1">
+    </div>
+
+    <div class="control-group">
+      <label>Attraction Strength <span id="attractionStrengthVal">0.3</span></label>
+      <input type="range" id="attractionStrength" min="0.05" max="1" value="0.3" step="0.05">
+    </div>
+
+    <div class="control-group">
+      <label>Alignment Strength <span id="alignmentStrengthVal">0.5</span></label>
+      <input type="range" id="alignmentStrength" min="0" max="1" value="0.5" step="0.05">
+    </div>
+
+    <div class="control-group">
+      <label>Max Edge Length <span id="maxEdgeLengthVal">8</span></label>
+      <input type="range" id="maxEdgeLength" min="3" max="20" value="8" step="1">
+    </div>
+
+    <div class="control-group">
+      <label>Max Speed <span id="maxSpeedVal">1.5</span></label>
+      <input type="range" id="maxSpeed" min="0.5" max="5" value="1.5" step="0.1">
+    </div>
+
+    <div class="control-group">
+      <label>Growth Interval <span id="growthIntervalVal">3</span> steps</label>
+      <input type="range" id="growthInterval" min="1" max="20" value="3" step="1">
+    </div>
+
+    <div class="control-group">
+      <label>
+        <input type="checkbox" id="showNodes"> Show Nodes
+      </label>
+    </div>
+
+    <div class="button-row">
+      <button id="pauseBtn">Pause</button>
+      <button id="resetBtn">Reset</button>
+    </div>
+
+    <div class="button-row">
+      <button id="exportSVG">Export SVG</button>
+      <button id="exportPNG">Export PNG</button>
+    </div>
+
+    <div id="stats">
+      <span id="nodeCount">0</span> nodes &middot; <span id="fps">0</span> fps
+    </div>
+
+    <p class="hint">Click to add seeds &middot; Drag to deform</p>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
